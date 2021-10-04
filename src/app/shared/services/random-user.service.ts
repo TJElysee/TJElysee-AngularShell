@@ -7,7 +7,7 @@ import { ApiResult } from '../entities/random-user-api-result.entity';
 
 @Injectable()
 export class RandomUserService {
-    private baseUrl = 'https://randomuser.me/api/?noinfo&inc=gender,name,nat,email,picture';
+    private baseUrl = 'https://randomuser.me/api/?seed=foobar&noinfo&inc=gender,name,nat,email,picture';
 
     constructor(private http: HttpClient) { }
 
@@ -18,7 +18,7 @@ export class RandomUserService {
     }
 
     public getUser(userId: string) {
-        const requestUrl = `${this.baseUrl}&seed=foobar`;
+        const requestUrl = `${this.baseUrl}`;
         return this.http.get<ApiResult<User>>(requestUrl).pipe(
             map((result) => result.results));
     }

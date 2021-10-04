@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RandomUserService } from '../../../shared/services/random-user.service';
+import { RandomUserService } from '@services/random-user.service';
 import { User } from '../entities/users.entity';
 
 @Component({
@@ -14,7 +14,7 @@ export class UserListComponent implements OnInit {
 
     ngOnInit(): void {
         this.userService.getUsers()
-            .subscribe((result: any) => this.userList = result);
+            .subscribe((result: User[]) => this.userList = result);
     }
 
 }

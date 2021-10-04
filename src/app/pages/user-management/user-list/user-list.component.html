@@ -1,3 +1,8 @@
-<p>user-list works!</p>
-
-<p>{{userList.length}} 0</p>
+<div fxLayout="column wrap"
+     fxLayoutAlign="center center"
+     class="container-flex">
+    <div class="item"
+         *ngFor="let user of userList">
+        <app-user-card [user]=user></app-user-card>
+    </div>
+</div>

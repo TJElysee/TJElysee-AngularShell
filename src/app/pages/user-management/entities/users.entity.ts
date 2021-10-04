@@ -1,9 +1,9 @@
-export interface User {
-    gender: string;
-    name: Name;
-    picture: Picture;
-    email: string;
-    nat: string;
+export class User {
+    gender?: string;
+    name?: Name;
+    picture?: Picture;
+    email?: string;
+    nat?: string;
 }
 
 interface Name {
