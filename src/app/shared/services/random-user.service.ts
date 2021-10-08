@@ -12,7 +12,7 @@ export class RandomUserService {
     constructor(private http: HttpClient) { }
 
     public getUsers(): Observable<User[]> {
-        const requestUrl = `${this.baseUrl}&results=10`;
+        const requestUrl = `${this.baseUrl}&results=9`;
         return this.http.get<ApiResult<User>>(requestUrl).pipe(
             map((result) => result.results));
     }
