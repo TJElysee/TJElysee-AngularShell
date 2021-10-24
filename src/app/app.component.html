@@ -1,4 +1,5 @@
-<app-header></app-header>
+<app-header [username]="username"
+            (loginButtonClick)='onLoginButtonClicked()'></app-header>
 <mat-drawer-container>
     <mat-drawer class='sidenav'
                 mode="side"
