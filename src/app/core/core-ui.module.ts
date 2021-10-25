@@ -7,8 +7,8 @@ import { MatSelectModule } from '@angular/material/select';
 const materialComponents = [
     MatFormFieldModule,
     MatInputModule,
+    MatButtonModule,
     MatSelectModule,
-    MatButtonModule
 ];
 @NgModule({
     imports: [

@@ -1,9 +1,10 @@
-export class User {
-    gender?: string;
-    name?: Name;
-    picture?: Picture;
-    email?: string;
-    nat?: string;
+export interface User {
+    gender: string;
+    name: Name;
+    picture: Picture;
+    email: string;
+    nat: string;
+    id: UserId;
 }
 
 interface Name {
@@ -18,14 +19,20 @@ interface Picture {
     thumbnail: string;
 }
 
+interface UserId {
+    name: string;
+    value: string;
+}
+
 // -- TODO: add object type for see or exclude seed info
 
-class User2 {
+export class Model {
     gender?: string;
     name?: Name;
     picture?: Picture;
     email?: string;
     nat?: string;
+    id?: UserId;
 
     constructor(user: User) {
         this.gender = user?.gender;
@@ -33,22 +40,49 @@ class User2 {
         this.picture = user?.picture;
         this.email = user?.email;
         this.nat = user?.nat;
+        this.id = user.id;
+    }
+
+    public get title() {
+        return this.name?.title ?? '';
+    }
+
+    public set title(value: string) {
+        if (this.name) {
+            this.name.title = value;
+        }
     }
 
     public get fullname() {
         return `${this.name?.first} ${this.name?.last}`;
     }
 
+    public set firstName(value: string) {
+        if (this.name) {
+            this.name.first = value;
+        }
+    }
+
     public get firstName() {
-        return `${this.name?.first}`;
+        return this.name?.first ?? '';
+    }
+
+    public set lastName(value: string) {
+        if (this.name) {
+            this.name.last = value;
+        }
     }
 
     public get lastName() {
-        return `${this.name?.last}`;
+        return this.name?.last ?? '';
     }
 
     public get displayPicture() {
-        return `${this.picture?.thumbnail}`;
+        return this.picture?.thumbnail;
+    }
+
+    public get userId() {
+        return this.id?.value;
     }
 }
 

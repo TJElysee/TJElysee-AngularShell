@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { RandomUserService } from '@services/random-user.service';
 import { User } from '../entities/users.entity';
 
@@ -10,11 +11,17 @@ import { User } from '../entities/users.entity';
 export class UserListComponent implements OnInit {
     public userList: User[] = [];
 
-    constructor(private userService: RandomUserService) { }
+    constructor(private userService: RandomUserService,
+        private router: Router) { }
 
     ngOnInit(): void {
         this.userService.getUsers()
             .subscribe((result: User[]) => this.userList = result);
+    }
+
+
+    onUserEditButtonEventTriggered(userid: string): void {
+        this.router.navigate(['/user', userid]);
     }
 
 }

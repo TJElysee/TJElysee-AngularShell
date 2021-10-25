@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { User } from '../../entities/users.entity';
 
 @Component({
@@ -9,9 +9,14 @@ import { User } from '../../entities/users.entity';
 export class UserCardComponent implements OnInit {
 
     @Input() user?: User;
+    @Output() readonly editButtonClick = new EventEmitter<string>();
     constructor() { }
 
     ngOnInit(): void {
+    }
+
+    onEditButtonClicked() {
+        this.editButtonClick.emit(this.user?.nat);
     }
 
 

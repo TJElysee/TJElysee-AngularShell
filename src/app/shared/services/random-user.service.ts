@@ -20,6 +20,6 @@ export class RandomUserService {
     public getUser(userId: string) {
         const requestUrl = `${this.baseUrl}`;
         return this.http.get<ApiResult<User>>(requestUrl).pipe(
-            map((result) => result.results));
+            map((result) => result.results[0]));
     }
 }

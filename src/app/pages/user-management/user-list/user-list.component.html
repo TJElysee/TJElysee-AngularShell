@@ -3,6 +3,7 @@
      class="container-flex">
     <div class="item"
          *ngFor="let user of userList">
-        <app-user-card [user]=user></app-user-card>
+        <app-user-card [user]=user
+                       (editButtonClick)="onUserEditButtonEventTriggered($event)"></app-user-card>
     </div>
 </div>
