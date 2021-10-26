@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginFormComponent } from './core/components/login-form/login-form.component';
 import { LoggedInUser } from './core/entities/logged-in-user.entity';
+import { AuthenticationService } from './core/services/authentication.service';
 
 @Component({
     selector: 'app-root',
@@ -12,7 +13,8 @@ export class AppComponent {
     title = 'AngularProject';
     username?: string;
 
-    constructor(public dialog: MatDialog) { }
+    constructor(public dialog: MatDialog,
+        private authenticationService: AuthenticationService) { }
 
     onLoginButtonClicked() {
         this.openDialog();
@@ -25,8 +27,8 @@ export class AppComponent {
         });
 
         dialogRef.afterClosed().subscribe((user: LoggedInUser) => {
-            console.log('Welcome to our application Mr: ' + user.username);
             this.username = user.username;
+            this.authenticationService.login(user);
         });
     }
 
