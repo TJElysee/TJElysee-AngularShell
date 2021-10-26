@@ -6,7 +6,7 @@ import { User } from '../../pages/user-management/entities/users.entity';
 import { ApiResult } from '../entities/random-user-api-result.entity';
 
 @Injectable()
-export class RandomUserService {
+export class RandomUserHttpService {
     private baseUrl = 'https://randomuser.me/api/?seed=foobar&noinfo&inc=gender,name,nat,email,picture';
 
     constructor(private http: HttpClient) { }

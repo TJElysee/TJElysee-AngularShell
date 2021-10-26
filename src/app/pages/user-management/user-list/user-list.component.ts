@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RandomUserService } from '@services/random-user.service';
+import { RandomUserHttpService } from '@services/random-user.http.service';
 import { User } from '../entities/users.entity';
 
 @Component({
@@ -11,7 +11,7 @@ import { User } from '../entities/users.entity';
 export class UserListComponent implements OnInit {
     public userList: User[] = [];
 
-    constructor(private userService: RandomUserService,
+    constructor(private userService: RandomUserHttpService,
         private router: Router) { }
 
     ngOnInit(): void {

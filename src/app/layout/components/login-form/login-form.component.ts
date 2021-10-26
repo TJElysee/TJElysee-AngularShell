@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { LoggedInUser } from '../../entities/logged-in-user.entity';
+import { LoggedInUser } from '../../../core/entities/logged-in-user.entity';
 
 interface Server {
     value: string;

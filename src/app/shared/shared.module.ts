@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { AuthorizationDirective } from './directives/authorization.directive';
-import { RandomUserService } from './services/random-user.service';
+import { RandomUserHttpService } from './services/random-user.http.service';
 
 
 
@@ -13,7 +13,7 @@ import { RandomUserService } from './services/random-user.service';
         CommonModule
     ],
     providers: [
-        RandomUserService
+        RandomUserHttpService
     ],
     exports: [
         AuthorizationDirective

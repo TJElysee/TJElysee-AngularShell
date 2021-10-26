@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { LoginFormComponent } from './core/components/login-form/login-form.component';
+import { LoginFormComponent } from './layout/components/login-form/login-form.component';
 import { LoggedInUser } from './core/entities/logged-in-user.entity';
 import { AuthenticationService } from './core/services/authentication.service';
 

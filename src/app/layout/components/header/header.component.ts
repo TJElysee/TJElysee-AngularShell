@@ -8,15 +8,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
     @Input() username?: string = '';
-    @Output() private readonly loginButtonClick: EventEmitter<unknown> = new EventEmitter();
+    @Output() private readonly loginButtonClick = new EventEmitter<void>();
 
     constructor() { }
-
-    // ngOnChanges(changes: SimpleChanges) {
-    //     if (changes.username) {
-    //         console.log(changes);
-    //     }
-    // }
 
     ngOnInit(): void {
     }
