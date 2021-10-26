@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { UserDetailsResolver } from './user-details/resolvers/user-datails.resolver';
 import { UserDetailsComponent } from './user-details/user-details.component';
@@ -17,7 +18,8 @@ import { UserManagementUIModule } from './user-management-ui.module';
         CommonModule,
         UserManagementUIModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        SharedModule
     ],
     providers: [
         UserDetailsResolver

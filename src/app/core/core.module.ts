@@ -7,7 +7,7 @@ import { AuthenticationService } from './services/authentication.service';
 
 @NgModule({
     declarations: [
-        LoginFormComponent
+        LoginFormComponent,
     ],
     imports: [
         CommonModule,
@@ -15,8 +15,10 @@ import { AuthenticationService } from './services/authentication.service';
         CoreUIModule
     ],
     exports: [
-        LoginFormComponent
+        LoginFormComponent,
     ],
-    providers: [AuthenticationService]
+    providers: [
+        AuthenticationService,
+    ]
 })
 export class CoreModule { }
