@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserDetailsResolver } from '@usermanagement/user-details/resolvers/user-datails.resolver';
 import { UserDetailsComponent } from '@usermanagement/user-details/user-details.component';
+import { HomeComponent } from './layout/components/home/home.component';
 import { UserListComponent } from './pages/user-management/user-list/user-list.component';
 import { AuthorizationGuard } from './shared/guards/authorization.guard';
 
 const routes: Routes = [
+    { path: '', component: HomeComponent },
     { path: 'users', component: UserListComponent },
     {
         path: 'user/:id',

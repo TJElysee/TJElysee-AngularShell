@@ -11,13 +11,16 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './components/home/home.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 
 const exportedComponents = [
     HeaderComponent,
     SideNavComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    HomeComponent
+
 ]
 
 const materialComponents = [
